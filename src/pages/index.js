@@ -17,7 +17,6 @@ import {colors, media, sharedStyles} from 'theme';
 import loadScript from 'utils/loadScript';
 import createOgUrl from 'utils/createOgUrl';
 import {babelURL} from 'site-constants';
-import ReactDOM from 'react-dom';
 import logoWhiteSvg from 'icons/logo-white.svg';
 
 class Home extends Component {
@@ -54,7 +53,7 @@ class Home extends Component {
           title="React &ndash; A JavaScript library for building user interfaces"
           ogUrl={createOgUrl('index.html')}
         />
-        <div css={{width: '100%'}}>
+        <div dir="rtl" css={{width: '100%'}}>
           <header
             css={{
               backgroundColor: colors.dark,
@@ -112,7 +111,7 @@ class Home extends Component {
                         fontSize: 60,
                       },
                     }}>
-                    React
+                    ری‌اکت
                   </h1>
                   <p
                     css={{
@@ -134,7 +133,7 @@ class Home extends Component {
                         fontSize: 30,
                       },
                     }}>
-                    A JavaScript library for building user interfaces
+                    یک کتابخانه جاوااسکریپت برای ساخت رابط‌کاربری
                   </p>
                   <Flex
                     valign="center"
@@ -149,12 +148,12 @@ class Home extends Component {
                       <ButtonLink
                         to="/docs/getting-started.html"
                         type="primary">
-                        Get Started
+                        شروع کنید
                       </ButtonLink>
                     </CtaItem>
                     <CtaItem>
                       <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                        Take the Tutorial
+                        آموزش ببینید
                       </ButtonLink>
                     </CtaItem>
                   </Flex>
@@ -198,23 +197,23 @@ class Home extends Component {
                         display: 'flex',
                         flexDirection: 'column',
                         flex: '0 1 33%',
-                        marginLeft: 40,
+                        marginRight: 40,
 
                         '&:first-of-type': {
-                          marginLeft: 0,
+                          marginRight: 0,
 
                           [media.lessThan('medium')]: {
-                            marginLeft: 10,
+                            marginRight: 10,
                           },
                         },
 
                         [media.lessThan('medium')]: {
                           display: 'inline-block',
                           verticalAlign: 'top',
-                          marginLeft: 0,
+                          marginRight: 0,
                           whiteSpace: 'normal',
                           width: '75%',
-                          marginRight: 20,
+                          marginLeft: 20,
                           paddingBottom: 40,
 
                           '&:first-of-type': {
@@ -286,12 +285,12 @@ class Home extends Component {
               <Flex valign="center">
                 <CtaItem>
                   <ButtonLink to="/docs/getting-started.html" type="primary">
-                    Get Started
+                    شروع کنید
                   </ButtonLink>
                 </CtaItem>
                 <CtaItem>
                   <ButtonLink to="/tutorial/tutorial.html" type="secondary">
-                    Take the Tutorial
+                    آموزش ببینید
                   </ButtonLink>
                 </CtaItem>
               </Flex>
@@ -310,13 +309,6 @@ Home.propTypes = {
   }).isRequired,
 };
 
-function renderExamplePlaceholder(containerId) {
-  ReactDOM.render(
-    <h4>Loading code example...</h4>,
-    document.getElementById(containerId),
-  );
-}
-
 const CtaItem = ({children, primary = false}) => (
   <div
     css={{
@@ -327,17 +319,17 @@ const CtaItem = ({children, primary = false}) => (
       },
 
       [media.greaterThan('xlarge')]: {
-        paddingLeft: 40,
+        paddingRight: 40,
       },
 
       '&:first-child': {
-        textAlign: 'right',
-        paddingRight: 15,
+        textAlign: 'left',
+        paddingLeft: 15,
       },
 
       '&:nth-child(2)': {
         [media.greaterThan('small')]: {
-          paddingLeft: 15,
+          paddingRight: 15,
         },
       },
     }}>
